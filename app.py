@@ -25,8 +25,48 @@ step = st.session_state["step"]
 
 # --- STEP 1: input ---
 if step == "input":
-    st.header("Bawarchi Ease – Your AI Kitchen Mentor")
-    st.subheader("آپ کے باورچی خانے کا ذہین ساتھی")
+    st.markdown("""
+
+    <style>
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-6px) rotate(3deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+    @keyframes steamRise {
+      0% { opacity: 1; transform: translateY(0px); }
+      50% { opacity: 0.3; transform: translateY(-4px); }
+      100% { opacity: 1; transform: translateY(0px); }
+    }
+    .mascot-container {
+      display: inline-block;
+      animation: float 3s ease-in-out infinite;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    .steam-path {
+      animation: steamRise 2s ease infinite;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+    header_html = """
+    <h1 style="display: flex; align-items: center; gap: 10px; margin: 0; font-size: 2.2rem;">
+      Bawarchi Ease – Your AI Kitchen Mentor
+      <div class="mascot-container">
+        <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#E67E22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path class="steam-path" d="M9 3c0 1-1 1-1 2s1 1 1 2" style="animation-delay: 0s;"/>
+          <path class="steam-path" d="M12 2c0 1-1 1-1 2s1 1 1 2" style="animation-delay: 0.4s;"/>
+          <path class="steam-path" d="M15 3c0 1-1 1-1 2s1 1 1 2" style="animation-delay: 0.8s;"/>
+          <path d="M4 10h16v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-8z" />
+          <path d="M2 10h20" />
+          <path d="M10 10V8h4v2" />
+        </svg>
+      </div>
+    </h1>
+    <h3 style="margin-top: 5px; color: #555; font-weight: normal;">آپ کے باورچی خانے کا ذہین ساتھی</h3>
+    """
+    st.markdown(header_html, unsafe_allow_html=True)
 
     col1, col2 = st.columns([6, 4])
     
